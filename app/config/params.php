@@ -12,8 +12,10 @@
 
 // Autres constantes
 
-define('DATE_FORMAT', 'd-m-Y');
+define('DATE_FORMAT', 'Y-n-d');
+define('TRUNCATE_LENGTH', 150);
 
 // Initialisation des zones dynamiques
         
 $content = '';
+$titleZone = '';

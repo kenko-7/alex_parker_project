@@ -16,8 +16,8 @@
     <meta name="url" content="http://www.yourdomainname.com" />
     <meta name="copyright" content="company name" />
     <meta name="robots" content="index,follow" />
-
-    <title>DevBlog - Personal Blog Template</title>
+    
+    <title>DevBlog - <?php echo $titleZone ?></title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon/favicon.ico" />
