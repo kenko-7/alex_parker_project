@@ -13,14 +13,17 @@ ALEX PARKER - CONSIGNES
 		- lien pour la modification et la suppression du post
 
 	3. Formulaire d'ajout et de modification d'un post
-		- title, text, categorie et quote du post
+		- title, text, image, categorie et quote du post
 
 LA LISTE DES CATEGORIES DANS LE MENU
 	Ajouter la liste des catégories dans la colonne de gauche (présente sur chaque page)
 	Vous ne devez pas activer ces liens, juste les afficher !!!
 	(Pas de routes pour les catégories)
 
-BONUS: afficher le nombre de posts pour chaque catégorie dans la liste des catégories
+BONUS: 
+	- afficher le nombre de posts pour chaque catégorie dans la liste des catégories
+	- Pagination 
+	- upload de l'image d'un post
 
 
 ROUTES
@@ -32,6 +35,7 @@ ROUTES
 
 	ROUTE DU DETAIL D'UN POST
 			PATTERN: /posts/id/slug-du-post.html
+			URL: ???
 			CTRL: ???
 			ACTION: ???
 			TITLE: Alex Parker - Title du post

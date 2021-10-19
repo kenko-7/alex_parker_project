@@ -16,7 +16,7 @@
     <meta name="url" content="http://www.yourdomainname.com" />
     <meta name="copyright" content="company name" />
     <meta name="robots" content="index,follow" />
-    
+    <base href="<?php echo BASE_URL; ?>">
     <title>DevBlog - <?php echo $titleZone ?></title>
 
     <!-- Favicon -->

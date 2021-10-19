@@ -14,47 +14,38 @@ RewriteEngine on
 
 # ROUTES PUBLIQUES --------------------------------
 
-# ROUTE PAR DEFAUT: liste des posts
-#     PATTERN: /
-#     CTRL: ???
-#     ACTION: ???
-#     TITLE: Alex Parker - Blog
 
-# ROUTE DU DETAIL D'UN POST
-#         PATTERN: /posts/id/slug-du-post.html
-#         CTRL: ???
-#         ACTION: ???
-#         TITLE: Alex Parker - Title du post
+#ROUTE DETAILS D'UN POST
+#   PATTERN: post/id/slug
+#   URL: index.php?postID=x
+    RewriteRule ^post\/([1-9][0-9]*)\/[a-z0-9][a-z0-9\-]*$ index.php?postID=$1  [L]
 
-# ROUTE D'AJOUT D'UN POST: affichage du formulaire
-#         PATTERN: /posts/add/form.html
-#         CTRL: ???
-#         ACTION: ???
-#         TITLE: Alex Parker - Add a post
+#FORMULAIRE AJOUT POST 
+#   PATTERN : /post/addForm
+#   URL: index.php?post=addForm
+    RewriteRule ^post\/addForm$ index.php?post=addForm [L]
 
-# ROUTE D'AJOUT D'UN POST: INSERT
-#         PATTERN: /posts/add/insert.html
-#         CTRL: ???
-#         ACTION: ???
-#         PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
-
+#ROUTE D'AJOUT D'UN POST: INSERT
+#   PATTERN: /post/add/insert
+#   URL: index.php?post=addInsert
+    RewriteRule ^post\/add\/insert$ index.php?post=addInsert [L]
 # ROUTE DE MODIFICATION D'UN POST: Affichage du formulaire
-#         PATTERN: /posts/id/slug-du-post/edit/form.html
-#         CTRL: ???
-#         ACTION: ???
+#         PATTERN: /post/id/slug-du-post/edit/form.html
+#         URL: index.php?post=updateForm
 #         TITLE: Alex Parker - Edit a post
+RewriteRule ^post\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/edit\/form.html$ index.php?post=updateForm&id=$1 [L]
 
 # ROUTE DE MODIFICATION D'UN POST: UPDATE
 #         PATTERN: /posts/id/slug-du-post/edit/update.html
-#         CTRL: ???
-#         ACTION: ???
+#         URL: index.php?post=updateEdit
 #         PAS DE TITLE CAR REDIRECTION VERS LA PAGE DE DETAILS DU POST
+RewriteRule ^post\/([1-9][0-9]*)\/([a-z0-9][a-z0-9\-]*)\/edit\/update.html$ index.php?post=updateEdit&id=$1 [L]
 
-# ROUTE DE SUPPRESSION D'UN POST:
-#         PATTERN: /posts/id/slug-du-post/delete.html
-#         CTRL: ???
-#         ACTION: ???
-#         PAS DE TITLE CAR REDIRECTION VERS LA PAGE D'ACCUEIL
+
+#ROUTE DE LA SUPPRESSION D'UN POST
+#   PATTERN: /post/delete
+#   URL index.php?post=delete&id=x
+    RewriteRule ^post\/([1-9][0-9]*)\/[a-z][a-z\-0-9]*\/delete$ index.php?post=delete&id=$1 [L]
 
 # -------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]

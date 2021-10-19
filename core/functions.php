@@ -33,3 +33,12 @@ function truncate(string $string, int $length = TRUNCATE_LENGTH) :string {
     endif;
     return $string;
 }
+/**
+ * Return a slugified string
+ *
+ * @param string $string
+ * @return string
+ */
+function slugify(string $string) :string {
+    return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string)));
+}
