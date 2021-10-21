@@ -25,7 +25,7 @@
                     <!-- Post Headline End -->
 
                     <!-- Form Start -->
-                    <form action="post/add/insert" method="post">
+                    <form action="post/<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>/edit/update.html" method="post">
                       <div class="form-group">
                         <label for="title">Title</label>
                         <input
@@ -34,6 +34,7 @@
                           id="title"
                           class="form-control"
                           placeholder="Enter your title here"
+                          value = "<?php echo $post['title']; ?>"
                         />
                       </div>
                       <div class="form-group">
@@ -44,7 +45,7 @@
                           class="form-control"
                           rows="5"
                           placeholder="Enter your text here"
-                        ></textarea>
+                        ><?php echo $post['text']; ?></textarea>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlFile1"> Image</label>
@@ -58,7 +59,7 @@
                           class="form-control"
                           rows="5"
                           placeholder="Enter your quote here"
-                        ></textarea>
+                        ><?php echo $post['quote']; ?></textarea>
                       </div>
                       <div class="form-group">
                         <label for="text">Category</label>

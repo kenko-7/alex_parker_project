@@ -52,7 +52,7 @@
 
                     <!-- Post Buttons -->
                     <div>
-                      <a href="post/updateForm" type="button" class="btn btn-primary"
+                      <a href="post/<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>/edit/form.html" type="button" class="btn btn-primary"
                         >Edit Post</a
                       >
                       <a

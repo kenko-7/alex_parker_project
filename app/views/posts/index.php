@@ -32,7 +32,7 @@
                     <?php echo \Core\Functions\truncate($post['text']) ?>
                     </p>
                     <a
-                      href="posts/<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']); ?>"
+                      href="post/<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']); ?>"
                       class="
                         button button-style button-anim
                         fa fa-long-arrow-right

@@ -21,11 +21,12 @@ switch ($_GET['post']):
     break;
 
     case "updateForm":
-    PostController\updateFormAction($conn);
+    PostController\updateFormAction($conn, $_GET['id']);
     break;
 
     case "updateEdit":
-    PostController\updateEditAction($conn);
+    PostController\updateEditAction($conn, $_GET['id'], $_POST);
+    
     break;
 
 endswitch;

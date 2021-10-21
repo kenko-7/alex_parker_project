@@ -57,11 +57,22 @@ function deleteAction(\PDO $conn, int $id) {
       endif;
 }
 
-function updateFormAction(\PDO $conn) {
+function updateFormAction(\PDO $conn, int $id) {
+    include_once '../app/models/postModel.php';
+    $post = PostModel\findOneById($conn,$id);
     GLOBAL $content, $titleZone;
-    $titleZone = 'Add a post';
+    $titleZone = "Edit a post";
     ob_start();
     include '../app/views/posts/updateForm.php';
     $content = ob_get_clean();
-
 }
+
+
+
+function updateEditAction(\PDO $conn, int $id, array $data){
+    include_once '../app/models/postModel.php';
+    PostModel\updateOneById($conn,$id,$data);
+    header("location: " . BASE_URL . "post/". $id . "/" .\Core\Functions\slugify($_POST["title"]) .".html");
+}
+
+    

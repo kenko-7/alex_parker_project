@@ -48,3 +48,19 @@ function deleteOneById(\PDO $conn, int $id) {
             $rs->bindValue(':id', $id, \PDO::PARAM_INT);
             return ($rs->execute())?1:0;
 }
+
+
+function updateOneById(\PDO $conn,int $id, array $data){
+    $sql = "UPDATE posts 
+            SET title = :title,
+                text = :text,
+                updated_at = NOW(),
+                quote = :quote
+            WHERE id = :id;";
+    $rs = $conn->prepare($sql);
+    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+    $rs->bindValue(':title', $data['title'], \PDO::PARAM_STR);
+    $rs->bindValue(':text', $data['text'], \PDO::PARAM_STR);
+    $rs->bindValue(':quote', $data['quote'], \PDO::PARAM_STR);
+    return $rs->execute();
+}
