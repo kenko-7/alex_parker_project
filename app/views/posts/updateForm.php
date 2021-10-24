@@ -25,7 +25,7 @@
                     <!-- Post Headline End -->
 
                     <!-- Form Start -->
-                    <form action="post/<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>/edit/update.html" method="post">
+                    <form action="post/<?php echo $post['postID']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>/edit/update.html" method="post">
                       <div class="form-group">
                         <label for="title">Title</label>
                         <input
@@ -69,10 +69,13 @@
                           class="form-control"
                         >
                           <option disabled selected>
-                            Select your category
+                            <?php echo $post['categorieName']; ?>
                           </option>
-                          <option value="1">Life style</option>
-                          <option value="2">Sport</option>
+                          <?php include_once "../app/models/categoriesModel.php";
+                                $categories = App\Models\CategoriesModel\findAll($conn); ?>
+                          <?php foreach ($categories as $categorie) : ?>
+                            <option value="<?php echo $categorie['id'];?>"><?php echo $categorie['name']; ?></option>
+                          <?php endforeach; ?>
                         </select>
                       </div>
                       <div>

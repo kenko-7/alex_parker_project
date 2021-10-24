@@ -19,20 +19,20 @@
                   <div class="col-md-12 blog-post row">
                   <?php foreach ($posts as $post): ?>
                     <div class="post-title">
-                      <a href="post/<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']); ?>"
+                      <a href="post/<?php echo $post['postID']; ?>/<?php echo \Core\Functions\slugify($post['title']); ?>"
                         ><h1>
-                          <?php echo $post['title'] ?>
+                          <?php echo $post['title']; ?>
                         </h1></a
                       >
                     </div>
                     <div class="post-info">
-                      <span><?php echo \Core\Functions\datify($post['created_at']) ?></span> | <span>Life style</span>
+                      <span><?php echo \Core\Functions\datify($post['created_at']); ?></span> | <span><?php echo $post['categorieName']; ?></span>
                     </div>
                     <p>
-                    <?php echo \Core\Functions\truncate($post['text']) ?>
+                    <?php echo \Core\Functions\truncate($post['text']); ?>
                     </p>
                     <a
-                      href="post/<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']); ?>"
+                      href="post/<?php echo $post['postID']; ?>/<?php echo \Core\Functions\slugify($post['title']); ?>"
                       class="
                         button button-style button-anim
                         fa fa-long-arrow-right
@@ -56,6 +56,3 @@
               </div>
             </div>
                   
-                </div>
-            </div>
-        </div>

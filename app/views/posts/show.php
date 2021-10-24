@@ -34,7 +34,7 @@
 
                     <!-- Post Detail Start -->
                     <div class="post-info">
-                      <span><?php echo $post['created_at']; ?></span> | <span>Life style</span>
+                      <span><?php echo $post['created_at']; ?></span> | <span><?php echo $post['categorieName']; ?></span>
                     </div>
                     <!-- Post Detail End -->
 
@@ -52,11 +52,11 @@
 
                     <!-- Post Buttons -->
                     <div>
-                      <a href="post/<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>/edit/form.html" type="button" class="btn btn-primary"
+                      <a href="post/<?php echo $post['postID']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>/edit/form.html" type="button" class="btn btn-primary"
                         >Edit Post</a
                       >
                       <a
-                        href="post/<?php echo $post['id']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>/delete"
+                        href="post/<?php echo $post['postID']; ?>/<?php echo \Core\Functions\slugify($post['title']);?>/delete"
                         type="button"
                         class="btn btn-secondary"
                         role="button"
